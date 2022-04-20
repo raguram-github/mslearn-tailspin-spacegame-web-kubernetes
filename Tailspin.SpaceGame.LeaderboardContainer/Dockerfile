@@ -1,6 +1,7 @@
 FROM mcr.microsoft.com/dotnet/aspnet:5.0 AS base
 WORKDIR /app
 
+# Serve on port 8080, we cannot serve on port 80 with a custom user that is not root.
 ENV ASPNETCORE_URLS=http://+:8080
 EXPOSE 8080
 
